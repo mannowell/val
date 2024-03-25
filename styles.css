@@ -11,6 +11,31 @@ header {
     padding: 1em;
 }
 
+h1 {
+    color: #ffffff; /* Cor do texto branco */
+}
+
+/* Estilos para os cardápios */
+.cardapio {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Estilos para as informações de contato */
+.contato {
+    margin-top: 50px;
+    text-align: center;
+}
+
 main {
     padding: 1em;
 }
