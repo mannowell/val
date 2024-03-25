@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vendo Salgados</title>
+	<title>Val - Lanches e Salgados</title>
 	<link rel="stylesheet" href="estilo.css"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,22 +31,9 @@
 				function enviarPedido() {
 					const pedidoString = pedidoItens.join(", ");
 					alert("Pedido enviado: " + pedidoString);
-					// Adicione lógica adicional aqui, como enviar para o WhatsApp
-					// Pode ser necessário integrar uma API ou usar um serviço específico para isso.
-				}
-		
-				document.addEventListener("DOMContentLoaded", function () {
-					const whatsappButtons = document.querySelectorAll('.whatsapp-button');
-			
-					whatsappButtons.forEach(button => {
-						button.addEventListener('click', function (event) {
-							event.preventDefault();
-							enviarPedidoWhatsApp();
-						});
-					});
-				});
-			
-				function enviarPedidoWhatsApp() {
+					// Lógica p/ enviar pedido ao WhatsApp
+					// Pode ser necessário integrar uma API ou usar um serviço específico para isso??
+					function enviarPedidoWhatsApp() {
 					const pedidoString = pedidoItens.join(", ");
 					const numeroTelefone = '5598999049860';  // Substitua pelo seu número de telefone
 			
@@ -60,7 +47,21 @@
 					atualizarPedido();
 			
 					window.open(linkWhatsApp, '_blank');
+					
 				}
+		
+				document.addEventListener("DOMContentLoaded", function () {
+					const whatsappButtons = document.querySelectorAll('.whatsapp-button');
+			
+					whatsappButtons.forEach(button => {
+						button.addEventListener('click', function (event) {
+							event.preventDefault();
+							enviarPedidoWhatsApp();
+						});
+					});
+				});
+			
+				
 	</script>
  </head>
 <body class="bg-gray-200">
