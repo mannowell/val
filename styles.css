@@ -1,33 +1,31 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
+/* Estilos para o cabeçalho */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #ff9900; /* Cor de fundo laranja */
+    padding: 20px;
     text-align: center;
-    padding: 1em;
 }
 
-h1 {
+h3 {
     color: #ffffff; /* Cor do texto branco */
 }
 
+h1 {
+    color: #ff0000; /* Cor vermelha */
+    font-weight: bold; /* Negrito */
+    font-size: 21px; /* Tamanho da fonte */
+  }
+
 /* Estilos para os cardápios */
-.cardapio {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+#cardapio {
+    display: flex; /* Torna os filhos flexíveis */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
 }
 
 .card {
-    width: 300px;
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    width: calc(50% - 20px); /* Definindo a largura do card para ocupar metade do espaço disponível */
+    margin: 10px; /* Adicionando margem entre os cards */
+    border: 1px solid #ccc; /* Adicionando uma borda para destacar os cards */
+    padding: 10px; /* Adicionando preenchimento dentro dos cards */
 }
 
 /* Estilos para as informações de contato */
@@ -36,16 +34,19 @@ h1 {
     text-align: center;
 }
 
-main {
-    padding: 1em;
+/* Estilos para o rodapé */
+footer {
+    background-color: #333; /* Cor de fundo preta */
+    color: #ffffff; /* Cor do texto branco */
+    padding: 20px;
+    text-align: center;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
+.center {
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+  }
+  .center img {
+    width: 10%; /* Reduzir em 10% */
+    display: block;
+    margin: 0 auto; /* Centralizar */
+  }
