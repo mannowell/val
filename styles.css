@@ -26,6 +26,7 @@ h1 {
     margin: 10px; /* Adicionando margem entre os cards */
     border: 1px solid #ccc; /* Adicionando uma borda para destacar os cards */
     padding: 10px; /* Adicionando preenchimento dentro dos cards */
+    background-color: #ff9900; /* Cor de fundo laranja */
 }
 
 /* Estilos para as informações de contato */
