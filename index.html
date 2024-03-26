@@ -69,18 +69,23 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: aquamarine !important;">
         <div class="container-fluid center">
             <h1 class="text-5xl md:text-6xl font-bold mb-6 text-red-900 center"> Experimente nossos Salgados</h1>
-            <a href="https://wa.me/5598999049860" class="py-2 px-3 text-teal-900 hover:text-blue-400 text-5xl">Aperte aqui Faça seu pedido no Zap</a><br>
+            <div id="pedido">
+        <h2>Entre em Contato</h2>
+        <p>Para fazer pedidos ou obter mais informações, entre em contato conosco:</p>
+        <form action="https://api.whatsapp.com/send" method="GET" target="_blank">
+            <input type="hidden" name="phone" value="5598999049860">
+            <input type="hidden" name="text" value="Olá! Gostaria de fazer um pedido.">
+            <input class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400" type="submit" value="Fazer Pedido pelo WhatsApp">
+        </form>
+    </div>
             <br>
             <p>Telefone: (98) 99904-9860</p>
             <i style="font-size:54px" class="fa">&#xf232;</i>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                
               </li>
               <li class="nav-item dropdown">
-                
-                  Endereço
                 </a>
                 <ul class="dropdown-menu">
                   <li><hr class="dropdown-divider"></li>
@@ -93,7 +98,6 @@
     <header>
         <a href="#menu" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400">Promoção de Hoje</a>
         <a class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400" aria-current="page" href="#endereco">Endereço</a>
-	    <a href="#pedido" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400">Faça seu Pedido</a>
     </header>
     <div id="cardapio" class="section">
                 <div class="card">
@@ -123,7 +127,7 @@
 </div>
 <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center">
 <span class="text-2xl font-medium text-gray-800">Enroladinho de Salsicha</span><br>
-<img class="max-w-96" src="https://www.bing.com/images/blob?bcid=sn9nwYx9atUGHNKQrMMrOISWKnQy.....14" alt="">
+<img class="max-w-96" src="https://receitasrapidas.org/wp-content/uploads/2023/09/enroladinho-de-salsicha.jpg" >
 </div>
 <div class="bg-white rounded-lg p-6 flex flex-col items-center text-center">
 <span class="text-2xl font-medium text-gray-800">Rissole de Presunto</span><br>
@@ -133,29 +137,16 @@
 </div>
 </div>
     </div>
-    <div id="endereco" class="section">
-        <div class="endereco">
+</div>
+        <div class="contato">
+        <div id="endereco" class="section">
             <p>Endereço: Unidade 105, Rua 01, Nº 31 - Cidade Operaria, São Luís - MA</p>
-        </div>
     </div>
-    <div id="pedido">
-        <h2>Entre em Contato</h2>
-        <p>Para fazer pedidos ou obter mais informações, entre em contato conosco:</p>
-        <form action="https://api.whatsapp.com/send" method="GET" target="_blank">
-            <input type="hidden" name="phone" value="5598999049860">
-            <input type="hidden" name="text" value="Olá! Gostaria de fazer um pedido.">
-            <input type="submit" value="Fazer Pedido pelo WhatsApp">
-        </form>
-    </div>
-
     <div id="blog" class="section">
-        
     </div>
-
     <div id="avaliacoes" class="section">
         <!-- Conteúdo das Avaliações -->
     </div>
-
     <footer>
         <div id="redes-sociais" class="section">
             <!-- Conteúdo das Redes Sociais -->
