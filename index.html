@@ -93,9 +93,11 @@
     <header>
         <a href="#menu" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400">Promoção de Hoje</a>
         <a class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400" aria-current="page" href="#endereco">Endereço</a>
+	    <a href="#pedido" class="bg-rose-300 text-white px-4 py-2 rounded hover:bg-rose-400 transition duration text-blue-400">Faça seu Pedido</a>
     </header>
     <div id="cardapio" class="section">
                 <div class="card">
+			<h1 class="flex col-2">PROMOÇÃO</h1><br>
                     <h1 class="flex col-2">Kit festa 1 Cento - R$ 50,00 </h1><br>
 				 	<p>25 UNIDADES de Coxinha</p>
 					<p>25 UNIDADES de Enroladinho de Salsicha</p>
@@ -132,12 +134,18 @@
 </div>
     </div>
     <div id="endereco" class="section">
-        <div class="contato">
+        <div class="endereco">
             <p>Endereço: Unidade 105, Rua 01, Nº 31 - Cidade Operaria, São Luís - MA</p>
         </div>
     </div>
-    <div id="promocoes" class="section">
-        <!-- Conteúdo das Promoções -->
+    <div id="pedido">
+        <h2>Entre em Contato</h2>
+        <p>Para fazer pedidos ou obter mais informações, entre em contato conosco:</p>
+        <form action="https://api.whatsapp.com/send" method="GET" target="_blank">
+            <input type="hidden" name="phone" value="5598999049860">
+            <input type="hidden" name="text" value="Olá! Gostaria de fazer um pedido.">
+            <input type="submit" value="Fazer Pedido pelo WhatsApp">
+        </form>
     </div>
 
     <div id="blog" class="section">
