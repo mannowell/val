@@ -17,14 +17,40 @@
             right: 20px;
             z-index: 1000;
         }
+
+        @keyframes dance {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+
+        .dancing-text span {
+            display: inline-block;
+            animation: dance 0.5s ease infinite;
+        }
+
+        .dancing-text span:nth-child(2n) {
+            animation-delay: 0.1s;
+        }
+
+        .dancing-text span:nth-child(3n) {
+            animation-delay: 0.2s;
+        }
+
+        .dancing-text span:nth-child(4n) {
+            animation-delay: 0.3s;
+        }
     </style>
 </head>
 <body class="bg-gray-200">
     <nav class="bg-red-600 p-4 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <!-- Título estilizado -->
-                <div class="flex flex-col">
+                <!-- Título estilizado com caixa e contorno -->
+                <div class="flex flex-col border-2 border-yellow-400 p-3 rounded-lg bg-red-700">
                     <h1 class="text-4xl font-['Oswald'] font-bold">
                         <span class="text-yellow-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">VAL</span>
                         <span class="text-white text-3xl ml-2">Lanches</span>
@@ -33,7 +59,7 @@
                 </div>
             </div>
             
-            <!-- Menu de navegação com os três links no mesmo estilo -->
+            <!-- Menu de navegação com os três links -->
             <div class="flex space-x-6 items-center">
                 <a href="#menu" class="bg-yellow-400 text-red-600 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Promoção</a>
                 <a href="#cardapio" class="bg-yellow-400 text-red-600 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Cardápio</a>
@@ -74,113 +100,118 @@
                     <div class="bg-yellow-100 p-6 rounded-lg">
                         <h3 class="text-3xl font-bold mb-4 text-red-600">Kit festa 1 Cento</h3>
                         <p class="text-4xl font-['Oswald'] font-bold text-green-600 mb-6">R$ 50,00</p>
-                        <ul class="text-lg space-y-3 text-gray-700">
+                        <ul class="text-lg space-y-3 text-gray-700 mb-6">
                             <li class="font-bold">✓ 25 UNIDADES de Coxinha</li>
                             <li class="font-bold">✓ 25 UNIDADES de Enroladinho</li>
                             <li class="font-bold">✓ 25 UNIDADES de Rissole</li>
                             <li class="font-bold">✓ 25 UNIDADES de Bolinha de Queijo</li>
                         </ul>
+                        <button onclick="carrinho.addItem('Kit festa 1 Cento - Promoção')" 
+                                class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition duration-300 flex items-center mx-auto">
+                            <i class="fa fa-plus mr-2"></i> 
+                            Adicionar ao Carrinho
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div id="cardapio" class="py-16 px-4 bg-white">
-                <div class="container mx-auto">
-                    <h2 class="text-4xl font-['Oswald'] font-bold text-center mb-8 text-red-600">Dê Match com nossos Salgados! 😍</h2>
-                    
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        <!-- Card Coxinha -->
-                        <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
-                            <div class="relative">
-                                <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/coxinha.png" alt="Coxinha de Frango">
-                                <span class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">HOT! 🔥</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Coxinha</h3>
-                                    <span class="text-blue-500">✓</span>
-                                    <span class="text-gray-500 text-sm">1km de você</span>
-                                </div>
-                                <p class="text-gray-600">
-                                    Solteira, crocante e recheada de frango 😘
-                                    <br>
-                                    Procuro alguém para dividir momentos saborosos!
-                                </p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#CrocantePorFora</span>
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#MolePorDentro</span>
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#Tradicional</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <span class="text-xl font-bold text-green-600">R$ 5,00</span>
-                                    <button onclick="carrinho.addItem('Coxinha de Frango')" 
-                                            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
-                                        <i class="fa fa-plus mr-2"></i> Adicionar
-                                    </button>
-                                </div>
-                            </div>
+    <div id="cardapio" class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-['Oswald'] font-bold text-center mb-8 text-red-600">Dê Match com nossos Salgados! 😍</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Card Coxinha -->
+                <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
+                    <div class="relative">
+                        <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/coxinha.png" alt="Coxinha de Frango">
+                        <span class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">HOT! 🔥</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Coxinha</h3>
+                            <span class="text-blue-500">✓</span>
+                            <span class="text-gray-500 text-sm">1km de você</span>
                         </div>
-
-                        <!-- Card Risole -->
-                        <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
-                            <div class="relative">
-                                <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/risole.png" alt="Risole de Presunto e Queijo">
-                                <span class="absolute top-3 right-3 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">Premium ⭐</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Risole</h3>
-                                    <span class="text-blue-500">✓</span>
-                                    <span class="text-gray-500 text-sm">500m de você</span>
-                                </div>
-                                <p class="text-gray-600">
-                                    Recheado de presunto e queijo 🧀
-                                    <br>
-                                    Combino perfeitamente com seu café da tarde!
-                                </p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#DuploPrazer</span>
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#PresuntoEQueijo</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <span class="text-xl font-bold text-green-600">R$ 5,00</span>
-                                    <button onclick="carrinho.addItem('Risole de Presunto e Queijo')" 
-                                            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
-                                        <i class="fa fa-plus mr-2"></i> Adicionar
-                                    </button>
-                                </div>
-                            </div>
+                        <p class="text-gray-600">
+                            Solteira, crocante e recheada de frango 😘
+                            <br>
+                            Procuro alguém para dividir momentos saborosos!
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#CrocantePorFora</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#MolePorDentro</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#Tradicional</span>
                         </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-green-600">R$ 5,00</span>
+                            <button onclick="carrinho.addItem('Coxinha de Frango')" 
+                                    class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
+                                <i class="fa fa-plus mr-2"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Card Bolinha de Queijo -->
-                        <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
-                            <div class="relative">
-                                <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/bolinha.png" alt="Bolinha de Queijo">
-                                <span class="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">New! ✨</span>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-2">
-                                    <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Bolinha de Queijo</h3>
-                                    <span class="text-blue-500">✓</span>
-                                    <span class="text-gray-500 text-sm">2km de você</span>
-                                </div>
-                                <p class="text-gray-600">
-                                    Redondinha, quentinha e cheia de queijo 🧀
-                                    <br>
-                                    Super derretida por dentro!
-                                </p>
-                                <div class="flex gap-2 flex-wrap">
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#QueijoSupreme</span>
-                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#Derretida</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <span class="text-xl font-bold text-green-600">R$ 5,00</span>
-                                    <button onclick="carrinho.addItem('Bolinha de Queijo')" 
-                                            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
-                                        <i class="fa fa-plus mr-2"></i> Adicionar
-                                    </button>
-                                </div>
-                            </div>
+                <!-- Card Risole -->
+                <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
+                    <div class="relative">
+                        <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/risole.png" alt="Risole de Presunto e Queijo">
+                        <span class="absolute top-3 right-3 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold">Premium ⭐</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Risole</h3>
+                            <span class="text-blue-500">✓</span>
+                            <span class="text-gray-500 text-sm">500m de você</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Recheado de presunto e queijo 🧀
+                            <br>
+                            Combino perfeitamente com seu café da tarde!
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#DuploPrazer</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#PresuntoEQueijo</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-green-600">R$ 5,00</span>
+                            <button onclick="carrinho.addItem('Risole de Presunto e Queijo')" 
+                                    class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
+                                <i class="fa fa-plus mr-2"></i> Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Bolinha de Queijo -->
+                <div class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-200">
+                    <div class="relative">
+                        <img class="w-full h-72 object-cover rounded-xl mb-4" src="./images/bolinha.png" alt="Bolinha de Queijo">
+                        <span class="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">New! ✨</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-2xl font-['Oswald'] font-bold text-gray-800">Bolinha de Queijo</h3>
+                            <span class="text-blue-500">✓</span>
+                            <span class="text-gray-500 text-sm">2km de você</span>
+                        </div>
+                        <p class="text-gray-600">
+                            Redondinha, quentinha e cheia de queijo 🧀
+                            <br>
+                            Super derretida por dentro!
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#QueijoSupreme</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium text-gray-600">#Derretida</span>
+                        </div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xl font-bold text-green-600">R$ 5,00</span>
+                            <button onclick="carrinho.addItem('Bolinha de Queijo')" 
+                                    class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300 flex items-center">
+                                <i class="fa fa-plus mr-2"></i> Adicionar
+                            </button>
                         </div>
                     </div>
                 </div>
